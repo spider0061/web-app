@@ -9,6 +9,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { CentersComponent } from './centers.component';
 import { CentersRoutingModule } from 'app/centers/centers-routing.module';
 import { CentersService } from './centers.service';
+import { CentersViewComponent } from './centers-view/centers-view.component';
+import { GeneralTabComponent } from './centers-view/general-tab/general-tab.component';
+import {PipesModule} from '../pipes/pipes.module';
 
 @NgModule({
   imports: [
@@ -17,10 +20,11 @@ import { CentersService } from './centers.service';
     CentersRoutingModule,
     FormsModule,
     MatTableModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    PipesModule
 
   ],
-  declarations: [CentersComponent],
+  declarations: [CentersComponent, CentersViewComponent, GeneralTabComponent],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
   ]
