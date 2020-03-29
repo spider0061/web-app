@@ -19,6 +19,10 @@ import { Logger } from './core/logger/logger.service';
 import { I18nService } from './core/i18n/i18n.service';
 import { ThemeStorageService } from './shared/theme-picker/theme-storage.service';
 import { AlertService } from './core/alert/alert.service';
+import { KeyboardShortcutsService } from './help/keyboard-shortcuts/keyboard-shortcuts.service';
+
+import { take } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 /** Custom Models */
 import { Alert } from './core/alert/alert.model';
@@ -45,6 +49,7 @@ export class WebAppComponent implements OnInit {
    * @param {ThemeStorageService} themeStorageService Theme Storage Service.
    * @param {MatSnackBar} snackBar Material Snackbar for notifications.
    * @param {AlertService} alertService Alert Service.
+   * @param {KeyboardShortcutsService} keyboardShortcuts Keyboard Shortcuts Service.
    */
   constructor(private router: Router,
               private activatedRoute: ActivatedRoute,
@@ -53,7 +58,8 @@ export class WebAppComponent implements OnInit {
               private i18nService: I18nService,
               private themeStorageService: ThemeStorageService,
               public snackBar: MatSnackBar,
-              private alertService: AlertService) { }
+              private alertService: AlertService,
+              private keyboardShortcuts: KeyboardShortcutsService ) { }
 
   /**
    * Initial Setup:
